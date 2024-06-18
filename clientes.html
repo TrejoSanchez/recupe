@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHIMALHUA-CAN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="estilos/estilos.css">
+  <link rel="icon" href="img/logo.jpeg">
+   <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      padding: 5px 10px;
+      cursor: pointer;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+<!---   Encabezado de la pagina  --->
+<header class="encabezado">
+  <div class="containerrrs">
+    <div class="Bienvenido"><h3></h3></div>
+    <div class="perfil">
+      <h3>Bienvenida: Asistente Maria Garcia </h3>
+      <img src="img/asis.jpeg" alt="Foto de perfil">
+    </div>
+  </div>
+<div class="imgencabezado">
+  <img src="img/logo.jpeg" alt="">
+  </div>
+  <h1>Consultorio Veterinario "Chimalhua-CAN" </h1>
+   <div class="clearfix"></div>
+  <nav>
+    <a href="clientes.html"><i class="fa-solid fa-pen-to-square"></i> Clientes</a>
+    <a href="prdct.html"><i class="fa-solid fa-person"></i> Productos</a>
+    <div class="iniciars">
+    <a href="index.html"><i class="fa-regular fa-user"></i>  Cerrar sesión</a>
+    </div>
+  </nav>
+
+<div>
+  <h3>Añadir Nuevo Cliente</h3>
+  <input type="text" id="clientName" placeholder="Nombre">
+  <input type="text" id="clientLastName" placeholder="Apellido">
+  <input type="text" id="clientAddress" placeholder="Dirección">
+  <input type="text" id="clientPhone" placeholder="Teléfono">
+  <button onclick="addClient()">Añadir Cliente</button>
+</div>
+
+<table id="clientTable">
+  <tr>
+    <th>Id Cliente</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Dirección</th>
+    <th>Teléfono</th>
+    <th>Acciones</th>
+  </tr>
+  <!-- Aquí se añadirán los clientes dinámicamente -->
+</table>
+
+
+<script>
+  let clients = [
+    { id: 1, name: "Juan", lastName: "Pérez", address: "Calle 123", phone: "1234567890" },
+    { id: 2, name: "María", lastName: "Gómez", address: "Avenida 456", phone: "0987654321" },
+    // Añade más clientes aquí...
+  ];
+
+  function renderClients() {
+    const table = document.getElementById('clientTable');
+    table.innerHTML = `
+      <tr>
+        <th>Id Cliente</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+      </tr>
+    `;
+
+    clients.forEach((client, index) => {
+      const row = table.insertRow();
+      row.innerHTML = `
+        <td>${client.id}</td>
+        <td>${client.name}</td>
+        <td>${client.lastName}</td>
+        <td>${client.address}</td>
+        <td>${client.phone}</td>
+        <td>
+          <button onclick="editClient(${index})">Editar</button>
+          <button onclick="deleteClient(${index})">Eliminar</button>
+        </td>
+      `;
+    });
+  }
+
+  function addClient() {
+    const name = document.getElementById('clientName').value;
+    const lastName = document.getElementById('clientLastName').value;
+    const address = document.getElementById('clientAddress').value;
+    const phone = document.getElementById('clientPhone').value;
+
+    const id = clients.length > 0 ? clients[clients.length - 1].id + 1 : 1;
+
+    const client = {
+      id,
+      name,
+      lastName,
+      address,
+      phone
+    };
+
+    clients.push(client);
+    renderClients();
+  }
+
+  function editClient(index) {
+    const editedClient = prompt("Ingrese los nuevos valores separados por coma (nombre, apellido, dirección, teléfono):");
+    const values = editedClient.split(',');
+    clients[index].name = values[0];
+    clients[index].lastName = values[1];
+    clients[index].address = values[2];
+    clients[index].phone = values[3];
+    renderClients();
+  }
+
+  function deleteClient(index) {
+    const confirmation = confirm("¿Está seguro de eliminar este cliente?");
+    if (confirmation) {
+      clients.splice(index, 1);
+      renderClients();
+    }
+  }
+
+  // Renderizar los clientes al cargar la página
+  renderClients();
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+  <div class="footer">
+    <table>
+      <tr>
+        <td>
+          <p>Ubicación:</p><br>
+          <p>Av. Saltillo s/n Esq. Calle Clavel Col. Jardines de San Agustín Chimalhuacán Edo. de Méx.</p><br>
+          <p>Horario:</p><br>
+          <p>Lunes a Sabado de 10:00 a.m. A 7:00 p.m. y Domingos de 11:00 a.m. A 3:00 p.m.</p>
+          <p></p><br> 
+
+          <div class="redes-sociales">
+  <a href="https://www.facebook.com/profile.php?id=100063788671062&mibextid=ZbWKwL" class="red-social"><i class="fab fa-facebook-f"></i><span>Consultorio Veterinario<br>Chimalhua-Can</span></a>
+  <a href="https://www.instagram.com/veterinaria_chimalhuacan?igsh=MXFrZnl6NWQ1aGVlbw==" class="red-social"><i class="fab fa-instagram"></i><span>Vet.Juan Carlos Ortega</span></a>
+  <a href="#" class="red-social"><i class="fab fa-whatsapp"></i><span>55-16-12-72-50</span></a>
+</div>
+        </td>
+        <td>
+          <p>© 2024 Team Master. All Rights Reserved</p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+</body>
+</html>

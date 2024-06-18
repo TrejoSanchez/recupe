@@ -1,0 +1,82 @@
+
+
+#veterinariaProductos {
+    margin: 20px;
+}
+
+#veterinariaProductos h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#productTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#productTable th, #productTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#productTable th {
+    background-color: #f2f2f2;
+    border: solid black;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007bff;
+}
+
+
+#veterinariaServicios {
+    margin: 20px;
+}
+
+#veterinariaServicios h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#serviceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#serviceTable th, #serviceTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#serviceTable th {
+    background-color: gray;
+
+}
+
+#veterinariaServicios button {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#veterinariaServicios button:hover {
+    background-color: #007bff;
+
+}
